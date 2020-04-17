@@ -6,7 +6,7 @@
 <mapper namespace="com.dreamgyf.dim_restful_server.mapper.FriendMapper">
 
     <select id="selectFriend" resultType="com.dreamgyf.dim_restful_server.entity.User">
-        select a.id,a.username,a.nickname,b.remark_name from user a right join (select * from friend where user_id = #{id}) b on a.id = b.friend_id
+        select a.id,a.username,a.nickname,a.avatar_id,b.remark_name from user a right join (select * from friend where user_id = #{id}) b on a.id = b.friend_id
     </select>
 
 </mapper>

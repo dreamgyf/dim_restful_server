@@ -16,6 +16,8 @@ public class UserEntity implements Serializable {
 
     private String nickname;
 
+    private Integer avatarId;
+
     public Integer getId() {
         return this.id;
     }
@@ -39,5 +41,14 @@ public class UserEntity implements Serializable {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
+    public Integer getAvatarId() {
+        return this.avatarId;
+    }
+
+    public void setAvatarId(Integer avatarId) {
+        this.avatarId = avatarId;
+    }
+
 
 }

@@ -12,6 +12,8 @@ public class User implements Serializable {
 
     private String remarkName;
 
+    private Integer avatarId;
+
     public Integer getId() {
         return this.id;
     }
@@ -44,5 +46,12 @@ public class User implements Serializable {
         this.remarkName = remarkName;
     }
 
+    public Integer getAvatarId() {
+        return this.avatarId;
+    }
+
+    public void setAvatarId(Integer avatarId) {
+        this.avatarId = avatarId;
+    }
 
 }
