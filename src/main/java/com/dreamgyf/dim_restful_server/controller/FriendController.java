@@ -7,17 +7,18 @@ import java.util.stream.Collectors;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.dreamgyf.dim_restful_server.entity.User;
+import com.dreamgyf.dim_restful_server.entity.dao.FriendEntity;
 import com.dreamgyf.dim_restful_server.entity.dao.UserEntity;
 import com.dreamgyf.dim_restful_server.mapper.FriendMapper;
 import com.dreamgyf.dim_restful_server.mapper.UserMapper;
 import com.dreamgyf.dim_restful_server.utils.R;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/friend")
 public class FriendController {
     
@@ -45,6 +46,10 @@ public class FriendController {
         return R.ok().put("data", new HashMap<String, Object>(){{put("friendList", userList);}});
     }
 
-    
+    @RequestMapping("/check")
+    public R check(@RequestParam("myId") Integer myId, @RequestParam("userId") String userId) {
+        FriendEntity friendEntity = friendMapper.selectOne(new QueryWrapper<FriendEntity>().eq("user_id", myId).eq("friend_id", userId));
+        return R.ok().put("data", new HashMap<String, Object>(){{put("isFriend", friendEntity != null);}});
+    }
 
 }

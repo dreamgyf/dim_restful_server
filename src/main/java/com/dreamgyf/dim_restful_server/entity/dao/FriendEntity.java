@@ -16,7 +16,7 @@ public class FriendEntity implements Serializable {
 
     private Integer FriendId;
     
-    private String remakeName;
+    private String remarkName;
 
 
     public Integer getId() {
@@ -44,11 +44,11 @@ public class FriendEntity implements Serializable {
     }
 
     public String getRemakeName() {
-        return this.remakeName;
+        return this.remarkName;
     }
 
     public void setRemakeName(String remakeName) {
-        this.remakeName = remakeName;
+        this.remarkName = remakeName;
     }
 
 
